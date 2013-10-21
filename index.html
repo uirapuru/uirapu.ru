@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body>
+    <body ng-app>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -62,8 +62,9 @@
 
         <div class="container">
             <div class="row">
-                <div class="span4 aboutList">
-                    <h3>Doświadczenie</h3>
+                <div class="span4 aboutList" id="experience">
+                    <h3>Doświadczenie <span class="showmore"><input type="checkbox" ng-model="otherjobs">&nbsp;więcej</span></h3> 
+                    <div class="clearfix"></div>
                     <ul id="exp">
                         <li>
                             <strong>Clearcode.cc</strong><br />
@@ -83,55 +84,55 @@
                             <span class="occupation"> (web developer)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs">
                             <strong>BodyPerfect sp. z o.o.</strong><br />
                             <span class="date">XII.2009 - XI.2010</span>
                             <span class="occupation"> (trener personalny)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs">
                             <strong>Klub Sportowy Capoeira w Olsztynie</strong><br />
                             <span class="date">XII.2007 - chwila obecna</span>
                             <span class="occupation"> (prezes klubu oraz instruktor capoeira)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs">
                             <strong>C. Hartwig Gdynia</strong><br />
                             <span class="date">X.2006 - III.2006</span>
                             <span class="occupation"> (pomocnik magazyniera)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs">
                             <strong>Carnival Arts Center - Glasgow (UK)</strong><br />
                             <span class="date">VI.2006 - IX.2006</span>
                             <span class="occupation"> (konserwator oraz pomocnik barmana)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs">
                             <strong>Agencja reklamowa YellowPoint</strong><br />
                             <span class="date">X.2004 - VI.2006</span>
                             <span class="occupation"> (obsługa plotera, webdesign, prace manualne)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs">
                             <strong>Biuro Turystyki Aktywnej Kompas</strong><br />
                             <span class="date">VII.2004 - VIII.2009</span>
                             <span class="occupation"> (wychowawca kolonijny, obozy survival oraz militarne, instruktor samoobrony, team-building)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs">
                             <strong>TOMnet - kawiarenka internetowa/pub</strong><br />
                             <span class="date">IX.2002 - XI.2004</span>
                             <span class="occupation"> (administrator, obsługa klientów)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs">
                             <strong>Gdyński Ośrodek Sportu i Rekreacji</strong><br />
                             <span class="date">VI.2003 - XI.2004</span>
                             <span class="occupation"> (pracownik fizyczny)</span>
                             <div class="clearfix"></div>
                         </li>                            
-                        <li>
+                        <li class="otherjobs" ng-show="otherjobs" ng-hide="noIt = false">
                             <strong>AK-art</strong><br />
                             <span class="date">VI.2003 - VIII.2003</span>
                             <span class="occupation"> (pracownik fizyczny, nagłośnienie imprez masowych)</span>
@@ -172,18 +173,20 @@
                     <h3>Zainteresowania</h3>
                     <ul>
                         <li>
-                            <strong>Capoeira</strong><br />
-                            <p>uprawiam ją czynnie od września 2000 roku, obecnie posiadam stopień Graduado w grupie Capoeira Camangula.
+                            <h4>Capoeira <span class="showmore"><input type="checkbox" ng-model="capoeira">&nbsp;więcej</span></h4>
+                            <div class="clearfix"></div>
+                            <p ng-show="capoeira">uprawiam ją czynnie od września 2000 roku, obecnie posiadam stopień Graduado w grupie Capoeira Camangula.
                                 Uczestnik krajowych oraż międzynarodowych wydarzeń związanych z capoeira, przez 5 lat prowadziłem zajęcia
                                 jako instruktor w założonym przeze mnie Klubie Sportowym Capoeira w Olsztynie, który na chwilę obecną jest
                                 już samodzielnie działającym klubem.</p>
                         </li>                            
                         <li>
-                            <strong>Brazylijskie jiu-jitsu</strong><br />
-                            <p>uprawiam je od około 2007 roku. Startuję w amatorskich zawodach na szczeblu regionalnym i krajowym,
+                            <h4>Brazylijskie Jiu Jitsu <span class="showmore"><input type="checkbox" ng-model="bjj">&nbsp;więcej</span></h4>
+                            <div class="clearfix"></div>
+                            <p ng-show="bjj">uprawiam je od około 2007 roku. Startuję w amatorskich zawodach na szczeblu regionalnym i krajowym,
                                 przez 2 lata w olsztyńskim Berserkers Team oraz w Rio Grappling Club Wrocław. Do sukcesów należą między
                                 innymi:</p>
-                            <ul>
+                            <ul ng-show="bjj">
                                 <li>1 miejsce na Mistrzostwach Polski No-Gi (niebieskie pasy)</li>
                                 <li>1 miejsce na Pucharze Polski No-Gi (niebieskie pasy)</li>
                                 <li>2 miejsce na VIII Mistrzostwach Polski (niebieskie pasy)</li>
@@ -195,10 +198,27 @@
                             </ul>
                         </li>                                                     
                         <li>
-                            <strong>Survival, militarystyka, turystyka</strong><br />
-                            <p>Uprawnienia IRR instruktora survival a także samoobrona. Doświadczenie w pracy jako wychowawca kolonijny.</p>
+                            <h4>Survival, militarystyka, turystyka <span class="showmore"><input type="checkbox" ng-model="survival">&nbsp;więcej</span></h4>
+                            <div class="clearfix"></div>
+                            <p ng-show="survival">Uprawnienia IRR instruktora survival a także samoobrona. Doświadczenie w pracy jako wychowawca kolonijny.</p>
                         </li>                                                     
                     </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="span12" id="projects">
+                        <h3>Projekty</h3>
+                        <ul class="inline thumbnails">
+                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
+                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
+                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
+                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
+                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
+                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
+                            <li><a href="#" class="thumbnail"><img src="http://placehold.it/240x160" alt="" />http://dende.com.pl</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -207,24 +227,26 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/vendor/angular.min.js"></script>
+        <script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script type="text/javascript">
 
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-45011607-1']);
-            _gaq.push(['_trackPageview']);
+                                var _gaq = _gaq || [];
+                                _gaq.push(['_setAccount', 'UA-45011607-1']);
+                                _gaq.push(['_trackPageview']);
 
-            (function() {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
+                                (function() {
+                                    var ga = document.createElement('script');
+                                    ga.type = 'text/javascript';
+                                    ga.async = true;
+                                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                    var s = document.getElementsByTagName('script')[0];
+                                    s.parentNode.insertBefore(ga, s);
+                                })();
 
         </script>
         <!-- Piwik -->
