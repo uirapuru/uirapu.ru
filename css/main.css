@@ -230,6 +230,10 @@ div#headerBg {
 
 }
 
+.rightColumn h3 {
+    text-align: right;
+}
+
 div#soft {
     margin-bottom: 50px;
     text-align: center;
